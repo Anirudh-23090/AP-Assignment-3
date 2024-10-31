@@ -14,6 +14,7 @@ public class Item {
     public String getCategory() {
         return category;
     }
+
     public int getPrice() {
         return price;
     }

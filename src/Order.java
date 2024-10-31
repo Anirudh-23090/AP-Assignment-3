@@ -12,27 +12,35 @@ public class Order {
     public String getName() {
         return name;
     }
+
     public Cart getCart() {
         return cart;
     }
+
     public Customer getCustomer() {
         return customer;
     }
+
     public int getOrderID() {
         return orderID;
     }
+
     public int getDate() {
         return date;
     }
+
     public long getTotal() {
         return total;
     }
+
     public String getDetails() {
         return details;
     }
+
     public String getRequest() {
         return request;
     }
+
     public String getStatus() {
         return status;
     }

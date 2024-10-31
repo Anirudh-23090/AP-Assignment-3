@@ -10,6 +10,7 @@ public class Menu {
     public Item get(String name) {
         return items.get(name);
     }
+
     public void add(Item E) {
         items.put(E.getName(), E);
     }
