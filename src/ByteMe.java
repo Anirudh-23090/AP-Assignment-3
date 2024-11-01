@@ -1,4 +1,3 @@
-import javax.security.auth.login.LoginContext;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
@@ -12,11 +11,17 @@ public class ByteMe {
     private LinkedList<Order> orders;
     private LinkedHashMap<Integer, Order> history;
     private HashMap<String, Customer> customers;
+    private MenuManagement menuManagement;
+    private OrderManagement orderManagement;
+    private BrowseMenu browseMenu;
 
     public ByteMe() {
         menu = new Menu();
         orders = new LinkedList<Order>();
         history = new LinkedHashMap<Integer, Order>();
+        menuManagement = new MenuManagement(menu, orders);
+        orderManagement = new OrderManagement(orders);
+        browseMenu = new BrowseMenu(menu);
     }
 
     public void run() {

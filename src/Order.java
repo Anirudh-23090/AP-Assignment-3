@@ -44,4 +44,13 @@ public class Order {
     public String getStatus() {
         return status;
     }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "OrderID " + orderID + " Date " + date + " Customer " + customer.getType() + " " + customer.getName() + "\n" + cart;
+    }
 }
