@@ -14,6 +14,8 @@ public class Menu {
         return items.get(name);
     }
 
+    public boolean contains(String name) { return items.containsKey(name); }
+
     public void add(Item E) {
         items.put(E.getName(), E);
     }

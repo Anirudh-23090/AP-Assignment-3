@@ -17,13 +17,12 @@ public class BrowseMenu {
         }
     }
 
-    public Item search(String name) {
+    public void search(String name) {
         for (Item E : items) {
-            if (E.getName().equals(name)) {
-                return E;
+            if (E.getName().contains(name)) {
+                System.out.println(E);
             }
         }
-        return null;
     }
 
     public void filter(String category) {
@@ -34,8 +33,13 @@ public class BrowseMenu {
         }
     }
 
-    public void sort() {
+    public void sort(boolean reverse) {
         ArrayList<Item> arrayItems = new ArrayList<Item>(items);
         Collections.sort(arrayItems);
+        if (reverse)
+            Collections.reverse(arrayItems);
+        for (Item E : arrayItems) {
+            System.out.println(E);
+        }
     }
 }

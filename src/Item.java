@@ -1,11 +1,18 @@
-public class Item implements Comparable<Item> {
-    private String name, category, status, review;
-    private int price;
+import java.util.ArrayList;
 
-    public Item(String name, String category, String status) {
+public class Item implements Comparable<Item> {
+    private String name, category, status;
+    ArrayList<String> reviews;
+    private int price;
+    private int cnt;
+
+    public Item(String name, String category, int price, String status) {
         this.name = name;
         this.category = category;
         this.status = status;
+        this.price = price;
+        this.reviews = new ArrayList<>();
+        this.cnt = 0;
     }
 
     public String getName() {
@@ -16,12 +23,22 @@ public class Item implements Comparable<Item> {
         return category;
     }
 
+    public int getCnt() {
+        return cnt;
+    }
+
+    public void setCnt(int cnt) {
+        this.cnt = cnt;
+    }
+
     public String getStatus() {
         return status;
     }
 
-    public String getReview() {
-        return review;
+    public void getReviews() {
+        for (String review : reviews) {
+            System.out.println(review);
+        }
     }
 
     public void setStatus(String status) {
@@ -32,8 +49,9 @@ public class Item implements Comparable<Item> {
         this.price = price;
     }
 
-    public void setReview(String review) {
-        this.review = review;
+
+    public void addReview(String s) {
+        reviews.add(s);
     }
 
     public int getPrice() {
@@ -47,6 +65,6 @@ public class Item implements Comparable<Item> {
 
     @Override
     public String toString() {
-        return ("Name " + name + ", Category " + category + ", Price" + price + ", Status " + status);
+        return ("Name - " + name + "\nCategory - " + category + "\nPrice - " + price + "\nStatus - " + status);
     }
 }
