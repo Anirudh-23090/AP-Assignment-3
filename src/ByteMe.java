@@ -247,7 +247,7 @@ public class ByteMe {
 
     private boolean validate(Order order) {
         for (String item : order.getCart().getItems()) {
-            if (!menu.contains(item)) {
+            if (!menu.contains(item) || menu.get(item).getStatus().equals("Unavailable")) { // Assumption changed
                 return false;
             }
         }
